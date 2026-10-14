@@ -1,0 +1,410 @@
+/*
+ * MISP Synthwave Theme
+ * An unofficial dark retrowave theme for MISP (https://www.misp-project.org).
+ * Edit the variables in :root to recolour the whole interface.
+ * Author: Zayn Al Abedine Harb (github.com/64BitZayn) - MIT License
+ */
+:root {
+  --background-main: #211536;
+  --background-panel: #211536;
+  --background-sidebar: #24143a;
+  --navbar-bg: #1b102a;
+  --primary-accent: #00fff7;
+  --secondary-accent: #ff53a1;
+  --tertiary-accent: #f8a5c5;
+  --text-main: #e7e7eb;
+  --text-muted: #b76c8f;
+  --button-bg: #6e3a60;
+  --button-hover: #ff53a1;
+  --border-color: #4d1f4c;
+  --table-row-alt: #2d1a45;
+  --table-row-highlight: #3a2f5a;
+  --dropdown-bg: #2a1740;
+  --dropdown-hover: #3a2f5a;
+  --tag-bg: #232946;
+  --tag-text: #00fff7;
+}
+
+/* General backgrounds and text */
+body, .main-container {
+  background: var(--background-main) !important;
+  color: var(--text-main) !important;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar, .navbar-inner, .navbar-fixed-top, .navbar-static-top {
+  background: linear-gradient(90deg, var(--background-sidebar) 0%, var(--background-panel) 100%) !important;
+  border-bottom: 2px solid var(--secondary-accent);
+  color: var(--primary-accent) !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--primary-accent) 53%, transparent);
+}
+
+/* Sidebar */
+.sidebar, .side-nav, .nav-list, .sidebar-nav {
+  background: var(--background-sidebar) !important;
+  color: var(--text-main) !important;
+  border-right: 1px solid var(--border-color);
+  box-shadow: inset 2px 0 8px color-mix(in srgb, var(--secondary-accent) 20%, transparent);
+}
+
+/* Links */
+a, .accent, .navbar a, .sidebar a, .side-nav a {
+  color: var(--primary-accent) !important;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+a:hover, .navbar a:hover, .sidebar a:hover, .side-nav a:hover {
+  color: var(--secondary-accent) !important;
+  text-shadow: 0 0 8px var(--secondary-accent);
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--tertiary-accent) !important;
+  text-shadow: 0 0 6px var(--primary-accent);
+  font-weight: 600;
+}
+
+/* Panels, cards, boxes */
+.panel, .card, .box, .content, .well, .modal-content {
+  background: var(--background-panel) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 12px #0008;
+  border-radius: 6px;
+}
+
+/* TABLES */
+.table, .table-bordered, .table-striped, table, tbody, tr, td, th {
+  background: var(--background-panel) !important;
+  color: var(--text-main) !important;
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+.table th, .table thead th {
+  background: var(--background-sidebar) !important;
+  color: var(--primary-accent) !important;
+  border-bottom: 2px solid var(--secondary-accent) !important;
+  font-weight: 700;
+}
+.table-striped tbody tr:nth-of-type(odd),
+tr.odd, tr:nth-child(odd) {
+  background: var(--table-row-alt) !important;
+}
+.table-striped tbody tr:nth-of-type(even),
+tr.even, tr:nth-child(even) {
+  background: var(--background-panel) !important;
+}
+.table td, .table th {
+  border: 1px solid var(--border-color) !important;
+  padding: 8px 12px;
+}
+.table-striped tbody tr:hover,
+.table-hover tbody tr:hover {
+  background: var(--table-row-highlight) !important;
+  color: var(--primary-accent) !important;
+}
+
+/* Highlighted/selected rows */
+tr.info, tr.selected, tr.active, tr.highlight, .table-striped > tbody > tr.info, .table-hover > tbody > tr:hover {
+  background: var(--table-row-highlight) !important;
+  color: var(--primary-accent) !important;
+}
+
+/* Dropdown menus */
+.dropdown-menu,
+ul.dropdown-menu,
+.menu,
+.menu-list,
+.navbar-nav > li > ul,
+.navbar .dropdown-menu {
+  background: var(--dropdown-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 12px #0008;
+  border-radius: 6px;
+}
+.dropdown-menu > li > a,
+.menu-list > li > a,
+.dropdown-menu > li > button,
+.dropdown-menu a {
+  color: var(--primary-accent) !important;
+  background: transparent !important;
+  transition: background 0.2s, color 0.2s;
+}
+.dropdown-menu > li > a:hover,
+.menu-list > li > a:hover,
+.dropdown-menu > li > button:hover,
+.dropdown-menu a:hover,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > button {
+  background: var(--dropdown-hover) !important;
+  color: var(--secondary-accent) !important;
+}
+
+/* Forms - inputs, selects, textareas */
+input, select, textarea, .form-control {
+  background: var(--dropdown-bg) !important;
+  color: var(--primary-accent) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Disabled and readonly inputs */
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly], .form-control[disabled], .form-control[readonly] {
+  background: var(--table-row-alt) !important;
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Input focus */
+input:focus, select:focus, textarea:focus, .form-control:focus {
+  border-color: var(--primary-accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-accent) 27%, transparent) !important;
+  outline: none !important;
+  background: var(--dropdown-bg) !important;
+  color: var(--primary-accent) !important;
+}
+
+/* Inputs inside tables */
+table input, table select, table textarea, table .form-control {
+  background: var(--dropdown-bg) !important;
+  color: var(--primary-accent) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Range sliders */
+input[type="range"], .form-range {
+  background: transparent !important;
+  accent-color: var(--primary-accent) !important;
+}
+
+/* Radio and checkbox */
+input[type="radio"], input[type="checkbox"] {
+  accent-color: var(--primary-accent) !important;
+}
+
+/* Remove white background from number input spin buttons (Chrome/Edge/Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  background: var(--dropdown-bg) !important;
+  color: var(--primary-accent) !important;
+  border-radius: 0 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Remove white background from number input spin buttons (Firefox) */
+input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* Range slider track and thumb */
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--secondary-accent) !important;
+  border: 2px solid var(--primary-accent) !important;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--dropdown-bg) !important;
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-accent) 47%, transparent) !important;
+}
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+  background: var(--dropdown-bg) !important;
+}
+input[type="range"]:focus::-ms-fill-lower,
+input[type="range"]:focus::-ms-fill-upper {
+  background: var(--dropdown-bg) !important;
+}
+input[type="range"]::-moz-range-thumb {
+  background: var(--secondary-accent) !important;
+  border: 2px solid var(--primary-accent) !important;
+}
+input[type="range"]::-moz-range-track {
+  background: var(--dropdown-bg) !important;
+}
+input[type="range"]::-ms-thumb {
+  background: var(--secondary-accent) !important;
+  border: 2px solid var(--primary-accent) !important;
+}
+
+/* Placeholder text color */
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+}
+input::-webkit-input-placeholder { color: var(--text-muted) !important; }
+input::-moz-placeholder { color: var(--text-muted) !important; }
+input:-ms-input-placeholder { color: var(--text-muted) !important; }
+input::-ms-input-placeholder { color: var(--text-muted) !important; }
+textarea::-webkit-input-placeholder { color: var(--text-muted) !important; }
+textarea::-moz-placeholder { color: var(--text-muted) !important; }
+textarea:-ms-input-placeholder { color: var(--text-muted) !important; }
+textarea::-ms-input-placeholder { color: var(--text-muted) !important; }
+
+/* Buttons */
+button, .btn, input[type="submit"], .btn-primary {
+  background-color: var(--button-bg) !important;
+  color: var(--primary-accent) !important;
+  border: 1px solid var(--secondary-accent) !important;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #0006;
+  transition: background-color 0.2s, color 0.2s;
+}
+button:hover, .btn:hover, input[type="submit"]:hover, .btn-primary:hover {
+  background-color: var(--button-hover) !important;
+  color: #fff !important;
+  border-color: var(--primary-accent) !important;
+  box-shadow: 0 0 12px var(--secondary-accent);
+}
+
+/* Tags, labels, badges */
+.tag, .label, .badge, .osint-tag {
+  background-color: var(--tag-bg) !important;
+  color: var(--tag-text) !important;
+  border: 1px solid var(--primary-accent) !important;
+  box-shadow: 0 0 6px color-mix(in srgb, var(--primary-accent) 60%, transparent);
+  font-weight: bold;
+  text-shadow: 0 0 4px var(--primary-accent);
+}
+
+/* Login box */
+.login-box, .login-form, #login-form {
+  background-color: var(--background-panel) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--secondary-accent) !important;
+  box-shadow: 0 0 24px #000a;
+  border-radius: 6px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--background-sidebar);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-accent);
+  border-radius: 8px;
+}
+
+/* Footer */
+footer, .footer, .navbar-fixed-bottom {
+  background-color: var(--background-sidebar) !important;
+  color: var(--text-muted) !important;
+  border-top: 2px solid var(--secondary-accent);
+}
+
+/* Synthwave glow */
+.synth-glow, .navbar, .sidebar, .tag, .btn, .login-box {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--primary-accent) 40%, transparent), 0 0 24px color-mix(in srgb, var(--secondary-accent) 20%, transparent);
+}
+
+/* Pagination */
+.pagination,
+.pagination ul,
+.pagination li,
+.pagination a,
+.pagination span {
+  background-color: var(--background-panel) !important;
+  color: var(--primary-accent) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px;
+}
+
+.pagination a,
+.pagination li a {
+  color: var(--primary-accent) !important;
+  background: transparent !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination a:hover,
+.pagination li a:hover,
+.pagination .active a,
+.pagination .active span,
+.pagination li.active a,
+.pagination li.active span {
+  background-color: var(--background-sidebar) !important;
+  color: var(--secondary-accent) !important;
+  border-color: var(--secondary-accent) !important;
+}
+
+.pagination .disabled a,
+.pagination .disabled span,
+.pagination li.disabled a,
+.pagination li.disabled span {
+  color: var(--text-muted) !important;
+  background-color: var(--background-sidebar) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Modals and confirmation dialogs */
+.modal, .modal-content, .modal-header, .modal-footer,
+.bootstrap-dialog, .bootstrap-dialog .modal-content, .bootstrap-dialog .modal-header, .bootstrap-dialog .modal-footer {
+  background-color: var(--background-panel) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--secondary-accent) 27%, transparent) !important;
+  border-radius: 8px;
+}
+
+.modal-header, .bootstrap-dialog .modal-header {
+  background-color: var(--background-sidebar) !important;
+  color: var(--primary-accent) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.modal-footer, .bootstrap-dialog .modal-footer {
+  background-color: var(--background-sidebar) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.modal-body, .bootstrap-dialog .modal-body,
+.bootstrap-dialog-message,
+.modal-body .bootstrap-dialog-message,
+.bootstrap-dialog .bootstrap-dialog-message,
+.modal-content .bootstrap-dialog-message,
+.modal-content .modal-body,
+.modal-content .modal-body * {
+  background-color: var(--background-panel) !important;
+  color: var(--text-main) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Modal backdrop */
+.modal-backdrop, .modal-backdrop.show {
+  background-color: #000 !important;
+  opacity: 0.85 !important;
+}
+
+/* Modal buttons */
+.modal-footer button, .bootstrap-dialog .modal-footer button,
+.modal-footer .btn, .bootstrap-dialog .modal-footer .btn {
+  background-color: var(--button-bg) !important;
+  color: var(--primary-accent) !important;
+  border: 1px solid var(--secondary-accent) !important;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--secondary-accent) 33%, transparent);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.modal-footer button:hover, .bootstrap-dialog .modal-footer button:hover,
+.modal-footer .btn:hover, .bootstrap-dialog .modal-footer .btn:hover {
+  background-color: var(--button-hover) !important;
+  color: #fff !important;
+  border-color: var(--primary-accent) !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--primary-accent) 47%, transparent);
+}
